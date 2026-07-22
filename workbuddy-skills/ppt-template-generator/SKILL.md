@@ -21,18 +21,23 @@ Built from `05. Career Compass Presentation Template.pptx` (47 slides, 16:9, 13.
 
 | Name | HEX | RGB | Usage |
 |------|-----|-----|-------|
-| PRIMARY | `#9D3D1D` | (157,61,29) | Titles, emphasis, dark backgrounds |
-| SECONDARY | `#B95B42` | (185,91,66) | Subtitles, medium emphasis |
-| ACCENT | `#D6755A` | (214,117,90) | Body emphasis |
+| PRIMARY | `#9D3D1D` | (157,61,29) | Background fills, accent bars, decorative elements |
+| SECONDARY | `#B95B42` | (185,91,66) | Subtle decorative fills |
+| ACCENT | `#D6755A` | (214,117,90) | Decorative elements |
 | LIGHT | `#DDBCB0` | (221,188,176) | Card backgrounds |
 | BASE | `#F1E2DD` | (241,226,221) | Large-area light fills |
 | PAGE | `#F7F3ED` | (247,243,237) | Page base (lightest bg) |
 
-Dark slides (Cover, Closing): bg=`#9D3D1D`, text=white. Light slides: bg=`#F7F3ED`, titles=`#9D3D1D`.
+Dark slides (Cover, Closing): bg=`#9D3D1D`, text=white. Light slides: bg=`#F7F3ED`, all text = black (`#000000`).
 
 ## Typography
 
 **Font**: Futura Bk BT → Arial → Microsoft YaHei. Sizes: Cover 54pt, Section 32-36pt, Body 14-16pt, Caption 11-12pt. Min 9pt. Margins: 0.5".
+
+## ⚠️ 用户硬性要求（必须遵守）
+
+1. **直角边框** – 所有形状/卡片使用直角 Rectangle，不得使用圆角 Rounded Rectangle。
+2. **黑色字体** – 所有文字（标题、正文、标签、副标题等）使用纯黑 `#000000`。CC_PRIMARY 棕色只用于背景色块、装饰分割线、色条等非文字元素。深色背景页（Cover/Closing）的白字保持不变。
 
 ## Layout Functions (10)
 
