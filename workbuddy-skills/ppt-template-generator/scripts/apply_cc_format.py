@@ -159,6 +159,10 @@ def process_presentation(path, backup=True, dry_run=False, skip_fonts=False):
                                         old_rgb = run.font.color.rgb
                                         comps = _get_rgb_comps(old_rgb)
                                         new_rgb = snap_to_cc(comps)
+                                        # ⚠️ User: map text to black
+                                        r, g, b = _get_rgb_comps(new_rgb)
+                                        if r + g + b > 60 and new_rgb != CC_WHITE:
+                                            new_rgb = CC_BLACK
                                         if comps != _get_rgb_comps(new_rgb):
                                             if not dry_run:
                                                 run.font.color.rgb = new_rgb
@@ -180,6 +184,10 @@ def process_presentation(path, backup=True, dry_run=False, skip_fonts=False):
                                     old_rgb = run.font.color.rgb
                                     comps = _get_rgb_comps(old_rgb)
                                     new_rgb = snap_to_cc(comps)
+                                    # ⚠️ User: map text to black
+                                    r, g, b = _get_rgb_comps(new_rgb)
+                                    if r + g + b > 60 and new_rgb != CC_WHITE:
+                                        new_rgb = CC_BLACK
                                     if comps != _get_rgb_comps(new_rgb):
                                         if not dry_run:
                                             run.font.color.rgb = new_rgb
