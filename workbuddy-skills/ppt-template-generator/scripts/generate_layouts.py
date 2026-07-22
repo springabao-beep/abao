@@ -146,7 +146,7 @@ def three_col_points(pptx, heading, points, number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, heading, 0.5, 0.3, 12.33, 0.8,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     card_top = 1.4
     card_h   = 5.0
@@ -177,7 +177,7 @@ def three_col_points(pptx, heading, points, number=None):
         # Point title
         add_text_box(slide, pt.get("title", ""), x + 0.2, card_top + 0.75,
                      card_w - 0.4, 0.6,
-                     font_size=20, bold=True, color=CC_PRIMARY)
+                     font_size=20, bold=True, color=CC_BLACK)
 
         # Description
         add_text_box(slide, pt.get("description", ""), x + 0.2,
@@ -200,7 +200,7 @@ def pillars_showcase(pptx, title, pillars, number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.8,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     card_w  = 5.5
     card_h  = 2.4
@@ -224,7 +224,7 @@ def pillars_showcase(pptx, title, pillars, number=None):
         # Title
         add_text_box(slide, pt.get("title", ""), x + 0.2, y + 0.2,
                      card_w - 0.3, 0.5,
-                     font_size=18, bold=True, color=CC_PRIMARY)
+                     font_size=18, bold=True, color=CC_BLACK)
         # Description
         add_text_box(slide, pt.get("description", ""), x + 0.2, y + 0.8,
                      card_w - 0.3, 1.4,
@@ -247,7 +247,7 @@ def timeline(pptx, title, steps, number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.7,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     n       = min(len(steps), 5)
     node_w  = 2.0
@@ -291,7 +291,7 @@ def timeline(pptx, title, steps, number=None):
         # Step title
         add_text_box(slide, step.get("title", ""), x, node_top + 0.9,
                      node_w, 0.5,
-                     font_size=13, bold=True, color=CC_PRIMARY,
+                     font_size=13, bold=True, color=CC_BLACK,
                      align=PP_ALIGN.CENTER)
 
         # Description
@@ -310,16 +310,16 @@ def timeline(pptx, title, steps, number=None):
 def data_showcase(pptx, title, metrics, number=None):
     """
     Heading + up to 3 metric cards (CC_BASE bg), each with:
-    - Large value (72pt bold CC_PRIMARY)
+    - Large value (72pt bold CC_BLACK)
     - Label (18pt bold black)
-    - Optional sublabel (13pt CC_SECONDARY)
+    - Optional sublabel (13pt black)
     metrics: list of dicts [{value, label, sublabel?}, ...] — max 3
     """
     slide = _add_slide(pptx)
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.7,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     n       = min(len(metrics), 3)
     card_w  = 3.8
@@ -334,7 +334,7 @@ def data_showcase(pptx, title, metrics, number=None):
 
         add_text_box(slide, m.get("value", ""), x, card_top + 0.5,
                      card_w, 1.5,
-                     font_size=72, bold=True, color=CC_PRIMARY,
+                     font_size=72, bold=True, color=CC_BLACK,
                      align=PP_ALIGN.CENTER)
 
         add_text_box(slide, m.get("label", ""), x + 0.2, card_top + 2.2,
@@ -345,7 +345,7 @@ def data_showcase(pptx, title, metrics, number=None):
         if m.get("sublabel"):
             add_text_box(slide, m.get("sublabel", ""), x + 0.2, card_top + 3.3,
                          card_w - 0.4, 0.8,
-                         font_size=13, color=CC_SECONDARY,
+                         font_size=13, color=CC_BLACK,
                          align=PP_ALIGN.CENTER)
 
     if number:
@@ -363,7 +363,7 @@ def detailed_content(pptx, title, body_text, info_box_text="", number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.7,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     add_rect(slide, 0.5, 1.2, 7.5, 5.5, CC_BASE)
     add_text_box(slide, body_text, 0.7, 1.4, 7.1, 5.1,
@@ -372,7 +372,7 @@ def detailed_content(pptx, title, body_text, info_box_text="", number=None):
     if info_box_text:
         add_rect(slide, 8.3, 1.2, 4.5, 5.5, CC_LIGHT)
         add_text_box(slide, info_box_text, 8.5, 1.4, 4.1, 5.1,
-                     font_size=14, color=CC_PRIMARY, bold=True)
+                     font_size=14, color=CC_BLACK, bold=True)
 
     if number:
         slide_number(slide, number)
@@ -391,7 +391,7 @@ def discussion_slide(pptx, title, questions, number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.7,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     qs     = questions[:6]
     half   = (len(qs) + 1) // 2
@@ -436,7 +436,7 @@ def team_grid(pptx, title, members, number=None):
     set_slide_bg(slide, CC_PAGE)
 
     add_text_box(slide, title, 0.5, 0.3, 12.33, 0.7,
-                 font_size=32, bold=True, color=CC_PRIMARY)
+                 font_size=32, bold=True, color=CC_BLACK)
 
     n       = min(len(members), 4)
     card_w  = 2.8
@@ -469,12 +469,12 @@ def team_grid(pptx, title, members, number=None):
         add_text_box(slide, initials,
                      x + (card_w - 1.4) / 2, card_top + 0.55,
                      1.4, 0.8,
-                     font_size=24, bold=True, color=CC_PRIMARY,
+                     font_size=24, bold=True, color=CC_BLACK,
                      align=PP_ALIGN.CENTER)
 
         add_text_box(slide, m.get("name", ""), x, card_top + 2.0,
                      card_w, 0.5,
-                     font_size=16, bold=True, color=CC_PRIMARY,
+                     font_size=16, bold=True, color=CC_BLACK,
                      align=PP_ALIGN.CENTER)
 
         if m.get("title"):
@@ -507,12 +507,12 @@ def quote_slide(pptx, quote, author="", number=None):
 
     # Quote text
     add_text_box(slide, quote, 1.2, 2.0, 9.0, 3.5,
-                 font_size=26, bold=False, color=CC_PRIMARY,
+                 font_size=26, bold=False, color=CC_BLACK,
                  font_name=FONT_BODY)
 
     if author:
         add_text_box(slide, f"— {author}", 1.2, 5.6, 9.0, 0.5,
-                     font_size=16, bold=True, color=CC_SECONDARY,
+                     font_size=16, bold=True, color=CC_BLACK,
                      align=PP_ALIGN.RIGHT)
 
     if number:
